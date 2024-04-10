@@ -2,7 +2,11 @@
 FROM alpine:latest
 
 # Install SSH client
-RUN apk add --no-cache openssh-client
+RUN apk add --no-cache openssh-client sshpass
+
+# Temporary line to check if sshpass is installed
+RUN sshpass -V
+
 
 # Copy the entrypoint script into the container
 COPY entrypoint.sh /entrypoint.sh
