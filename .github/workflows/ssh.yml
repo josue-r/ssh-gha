@@ -12,6 +12,7 @@ jobs:
 
     - name: list files
       run: |
+        pwd
         ls -l
     - name: Run My Custom Action
       uses: josue-r/ssh-gha@main
