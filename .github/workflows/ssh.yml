@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run My Custom Action
-      uses: ./.@main
+      uses: .@main
       with:
         # Your action's inputs go here
         host: ${{ secrets.SSH_HOST }}
