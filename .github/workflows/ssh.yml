@@ -10,6 +10,9 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
+    - name: list files
+      run: |
+        ls -l
     - name: Run My Custom Action
       uses: josue-r/ssh-gha@main
       with:
