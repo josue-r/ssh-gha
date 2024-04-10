@@ -1,12 +1,21 @@
+name: Deploy Using SSH
+
+on: [push]
+
 jobs:
-  ssh-job:
+  my-job:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Execute SSH Command
-        uses: josue-r/ssh-gha@main
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          port: ${{ secrets.SSH_PORT }}
-          script: 'echo "Hello from remote server"'
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Run My Custom Action
+      uses: ./.@main
+      with:
+        # Your action's inputs go here
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        script: 'echo "Hello from the remote server!"'
