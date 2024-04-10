@@ -1,0 +1,21 @@
+name: 'SSH Action'
+description: 'Executes commands on a remote server via SSH using a password for authentication'
+inputs:
+  host:
+    description: 'SSH Host'
+    required: true
+  username:
+    description: 'SSH Username'
+    required: true
+  password:
+    description: 'SSH Password'
+    required: true
+  port:
+    description: 'SSH Port'
+    required: true
+  script:
+    description: 'Commands to execute on the remote server'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

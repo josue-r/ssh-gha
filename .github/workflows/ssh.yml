@@ -1,0 +1,12 @@
+jobs:
+  ssh-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute SSH Command
+        uses: josue-r/ssh-gha@main
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: 'echo "Hello from remote server"'
