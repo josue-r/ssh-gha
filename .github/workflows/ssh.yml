@@ -12,7 +12,7 @@ jobs:
 
     - name: list files
       run: |
-        apt install traceroute
+        apt-get install traceroute
         pwd
         ls -l
     - name: Trace Route to SSH Server
